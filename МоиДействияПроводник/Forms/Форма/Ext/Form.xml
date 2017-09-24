@@ -1,0 +1,944 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<SaveDataInSettings>UseList</SaveDataInSettings>
+	<ReportResult/>
+	<DetailsData/>
+	<ReportFormType>Main</ReportFormType>
+	<VariantAppearance/>
+	<AutoShowState>Auto</AutoShowState>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаНайтиФайлы" id="115">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.НайтиФайлы</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.SyncContents</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаНайтиФайлыРасширеннаяПодсказка" id="116"/>
+			</Button>
+			<Button name="ФормаСохранитьПортрет" id="213">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.СохранитьПортрет</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.SaveReportSettings</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаСохранитьПортретРасширеннаяПодсказка" id="214"/>
+			</Button>
+			<Button name="ФормаПрочитатьПортрет" id="215">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПрочитатьПортрет</CommandName>
+				<ExtendedTooltip name="ФормаПрочитатьПортретРасширеннаяПодсказка" id="216"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа2" id="113">
+			<Group>Horizontal</Group>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="114"/>
+			<ChildItems>
+				<InputField name="Путь" id="107">
+					<DataPath>Объект.Путь</DataPath>
+					<ChoiceButton>true</ChoiceButton>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="ПутьКонтекстноеМеню" id="108"/>
+					<ExtendedTooltip name="ПутьРасширеннаяПодсказка" id="109"/>
+				</InputField>
+				<InputField name="Маска" id="104">
+					<DataPath>Объект.Маска</DataPath>
+					<ContextMenu name="МаскаКонтекстноеМеню" id="105"/>
+					<ExtendedTooltip name="МаскаРасширеннаяПодсказка" id="106"/>
+				</InputField>
+				<CheckBoxField name="ИскатьВПодкаталогах" id="110">
+					<DataPath>Объект.ИскатьВПодкаталогах</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИскатьВПодкаталогахКонтекстноеМеню" id="111"/>
+					<ExtendedTooltip name="ИскатьВПодкаталогахРасширеннаяПодсказка" id="112"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа1" id="102">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="103"/>
+			<ChildItems>
+				<UsualGroup name="Группа3" id="117">
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="118"/>
+					<ChildItems>
+						<Table name="Каталоги" id="56">
+							<Representation>Tree</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Каталоги</DataPath>
+							<ContextMenu name="КаталогиКонтекстноеМеню" id="57"/>
+							<AutoCommandBar name="КаталогиКоманднаяПанель" id="58">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="КаталогиПереместитьВверх" id="191">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Каталоги.StandardCommand.MoveUp</CommandName>
+										<ExtendedTooltip name="КаталогиПереместитьВверхРасширеннаяПодсказка" id="192"/>
+									</Button>
+									<Button name="КаталогиПереместитьВниз" id="193">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Каталоги.StandardCommand.MoveDown</CommandName>
+										<ExtendedTooltip name="КаталогиПереместитьВнизРасширеннаяПодсказка" id="194"/>
+									</Button>
+									<Button name="КаталогиСортироватьСписокПоВозрастанию" id="187">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Каталоги.StandardCommand.SortListAsc</CommandName>
+										<ExtendedTooltip name="КаталогиСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="188"/>
+									</Button>
+									<Button name="КаталогиСортироватьСписокПоУбыванию" id="189">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Каталоги.StandardCommand.SortListDesc</CommandName>
+										<ExtendedTooltip name="КаталогиСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="190"/>
+									</Button>
+									<Button name="КаталогиВывестиСписок" id="195">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Каталоги.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="КаталогиВывестиСписокРасширеннаяПодсказка" id="196"/>
+									</Button>
+									<Button name="КаталогиИтоги" id="205">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Итоги</CommandName>
+										<ExtendedTooltip name="КаталогиИтогиРасширеннаяПодсказка" id="206"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="КаталогиРасширеннаяПодсказка" id="59"/>
+							<SearchStringAddition name="КаталогиСтрокаПоиска" id="60">
+								<AdditionSource>
+									<Item>Каталоги</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КаталогиСтрокаПоискаКонтекстноеМеню" id="61"/>
+								<ExtendedTooltip name="КаталогиСтрокаПоискаРасширеннаяПодсказка" id="62"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КаталогиСостояниеПросмотра" id="63">
+								<AdditionSource>
+									<Item>Каталоги</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КаталогиСостояниеПросмотраКонтекстноеМеню" id="64"/>
+								<ExtendedTooltip name="КаталогиСостояниеПросмотраРасширеннаяПодсказка" id="65"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КаталогиУправлениеПоиском" id="66">
+								<AdditionSource>
+									<Item>Каталоги</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КаталогиУправлениеПоискомКонтекстноеМеню" id="67"/>
+								<ExtendedTooltip name="КаталогиУправлениеПоискомРасширеннаяПодсказка" id="68"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="КаталогиИмя" id="69">
+									<DataPath>Объект.Каталоги.Имя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КаталогиИмяКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="КаталогиИмяРасширеннаяПодсказка" id="71"/>
+								</InputField>
+								<InputField name="КаталогиРазмер" id="84">
+									<DataPath>Объект.Каталоги.Размер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КаталогиРазмерКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="КаталогиРазмерРасширеннаяПодсказка" id="86"/>
+								</InputField>
+								<InputField name="КаталогиВремяИзменения" id="96">
+									<DataPath>Объект.Каталоги.ВремяИзменения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>7</Width>
+									<ContextMenu name="КаталогиВремяИзмененияКонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="КаталогиВремяИзмененияРасширеннаяПодсказка" id="98"/>
+								</InputField>
+								<InputField name="КаталогиОтносительноеИмя" id="207">
+									<DataPath>Объект.Каталоги.ОтносительноеИмя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КаталогиОтносительноеИмяКонтекстноеМеню" id="208"/>
+									<ExtendedTooltip name="КаталогиОтносительноеИмяРасширеннаяПодсказка" id="209"/>
+								</InputField>
+								<CheckBoxField name="КаталогиТолькоЧтение" id="173">
+									<DataPath>Объект.Каталоги.ТолькоЧтение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="КаталогиТолькоЧтениеКонтекстноеМеню" id="174"/>
+									<ExtendedTooltip name="КаталогиТолькоЧтениеРасширеннаяПодсказка" id="175"/>
+								</CheckBoxField>
+								<CheckBoxField name="КаталогиНевидимый" id="176">
+									<DataPath>Объект.Каталоги.Невидимый</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="КаталогиНевидимыйКонтекстноеМеню" id="177"/>
+									<ExtendedTooltip name="КаталогиНевидимыйРасширеннаяПодсказка" id="178"/>
+								</CheckBoxField>
+								<InputField name="КаталогиПолноеИмя" id="75">
+									<DataPath>Объект.Каталоги.ПолноеИмя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КаталогиПолноеИмяКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="КаталогиПолноеИмяРасширеннаяПодсказка" id="77"/>
+								</InputField>
+								<InputField name="КаталогиУниверсальноеВремяИзменения" id="99">
+									<DataPath>Объект.Каталоги.УниверсальноеВремяИзменения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>6</Width>
+									<ContextMenu name="КаталогиУниверсальноеВремяИзмененияКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="КаталогиУниверсальноеВремяИзмененияРасширеннаяПодсказка" id="101"/>
+								</InputField>
+								<InputField name="КаталогиИмяБезРасширения" id="72">
+									<DataPath>Объект.Каталоги.ИмяБезРасширения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КаталогиИмяБезРасширенияКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="КаталогиИмяБезРасширенияРасширеннаяПодсказка" id="74"/>
+								</InputField>
+								<InputField name="КаталогиПуть" id="78">
+									<DataPath>Объект.Каталоги.Путь</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КаталогиПутьКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="КаталогиПутьРасширеннаяПодсказка" id="80"/>
+								</InputField>
+								<InputField name="КаталогиРасширение" id="81">
+									<DataPath>Объект.Каталоги.Расширение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КаталогиРасширениеКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="КаталогиРасширениеРасширеннаяПодсказка" id="83"/>
+								</InputField>
+								<CheckBoxField name="КаталогиЭтоКаталог" id="90">
+									<DataPath>Объект.Каталоги.ЭтоКаталог</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="КаталогиЭтоКаталогКонтекстноеМеню" id="91"/>
+									<ExtendedTooltip name="КаталогиЭтоКаталогРасширеннаяПодсказка" id="92"/>
+								</CheckBoxField>
+								<CheckBoxField name="КаталогиЭтоФайл" id="93">
+									<DataPath>Объект.Каталоги.ЭтоФайл</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="КаталогиЭтоФайлКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="КаталогиЭтоФайлРасширеннаяПодсказка" id="95"/>
+								</CheckBoxField>
+								<CheckBoxField name="КаталогиСуществует" id="87">
+									<DataPath>Объект.Каталоги.Существует</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="КаталогиСуществуетКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="КаталогиСуществуетРасширеннаяПодсказка" id="89"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+						<Table name="Файлы" id="1">
+							<Footer>true</Footer>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Файлы</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ФайлыКонтекстноеМеню" id="2"/>
+							<AutoCommandBar name="ФайлыКоманднаяПанель" id="3">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ФайлыПереместитьВверх" id="199">
+										<Type>CommandBarButton</Type>
+										<CommandName>1:37740564-9e86-44a0-bea9-3f485a5a3f91</CommandName>
+										<ExtendedTooltip name="ФайлыПереместитьВверхРасширеннаяПодсказка" id="200"/>
+									</Button>
+									<Button name="ФайлыПереместитьВниз" id="201">
+										<Type>CommandBarButton</Type>
+										<CommandName>1:fa51b106-eae6-44c7-8054-76cbb3100603</CommandName>
+										<ExtendedTooltip name="ФайлыПереместитьВнизРасширеннаяПодсказка" id="202"/>
+									</Button>
+									<Button name="ФайлыСортироватьСписокПоВозрастанию" id="183">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>1:2bbe4e12-06d2-409b-a972-eea585125d83</CommandName>
+										<ExtendedTooltip name="ФайлыСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="184"/>
+									</Button>
+									<Button name="ФайлыСортироватьСписокПоУбыванию" id="185">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>1:58b2a785-23f6-4b0e-a324-9a1323285595</CommandName>
+										<ExtendedTooltip name="ФайлыСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="186"/>
+									</Button>
+									<Button name="ФайлыВывестиСписок" id="197">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>1:49602716-fea6-497f-8047-726404038857</CommandName>
+										<ExtendedTooltip name="ФайлыВывестиСписокРасширеннаяПодсказка" id="198"/>
+									</Button>
+									<ButtonGroup name="ФайлыГруппаПоиск" id="203">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Файлы группа поиск</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Файлы группа поиск</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ФайлыГруппаПоискРасширеннаяПодсказка" id="204"/>
+										<ChildItems>
+											<Button name="ФайлыНайти" id="179">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>1:c0519548-2a9a-44de-a25e-faf01e089d4d</CommandName>
+												<ExtendedTooltip name="ФайлыНайтиРасширеннаяПодсказка" id="180"/>
+											</Button>
+											<Button name="ФайлыОтменитьПоиск" id="181">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>1:44ad3ec9-f3c2-4913-9224-5f9fb6418743</CommandName>
+												<ExtendedTooltip name="ФайлыОтменитьПоискРасширеннаяПодсказка" id="182"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ФайлыРасширеннаяПодсказка" id="4"/>
+							<SearchStringAddition name="ФайлыСтрокаПоиска" id="5">
+								<AdditionSource>
+									<Item>Файлы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ФайлыСтрокаПоискаКонтекстноеМеню" id="6"/>
+								<ExtendedTooltip name="ФайлыСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ФайлыСостояниеПросмотра" id="8">
+								<AdditionSource>
+									<Item>Файлы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ФайлыСостояниеПросмотраКонтекстноеМеню" id="9"/>
+								<ExtendedTooltip name="ФайлыСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ФайлыУправлениеПоиском" id="11">
+								<AdditionSource>
+									<Item>Файлы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ФайлыУправлениеПоискомКонтекстноеМеню" id="12"/>
+								<ExtendedTooltip name="ФайлыУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ФайлыНомерСтроки" id="14">
+									<DataPath>Объект.Файлы.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<FooterDataPath>1/0:39408db1-71ad-4436-9c92-61894e6ca342/100000000</FooterDataPath>
+									<ContextMenu name="ФайлыНомерСтрокиКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="ФайлыНомерСтрокиРасширеннаяПодсказка" id="16"/>
+								</LabelField>
+								<InputField name="ФайлыИмя" id="17">
+									<DataPath>Объект.Файлы.Имя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФайлыИмяКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="ФайлыИмяРасширеннаяПодсказка" id="19"/>
+								</InputField>
+								<InputField name="ФайлыРазмер" id="32">
+									<DataPath>Объект.Файлы.Размер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<FooterDataPath>Объект.Файлы.Размер</FooterDataPath>
+									<ContextMenu name="ФайлыРазмерКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="ФайлыРазмерРасширеннаяПодсказка" id="34"/>
+								</InputField>
+								<InputField name="ФайлыВремяИзменения" id="44">
+									<DataPath>Объект.Файлы.ВремяИзменения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФайлыВремяИзмененияКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ФайлыВремяИзмененияРасширеннаяПодсказка" id="46"/>
+								</InputField>
+								<InputField name="ФайлыОтносительноеИмя" id="210">
+									<DataPath>Объект.Файлы.ОтносительноеИмя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФайлыОтносительноеИмяКонтекстноеМеню" id="211"/>
+									<ExtendedTooltip name="ФайлыОтносительноеИмяРасширеннаяПодсказка" id="212"/>
+								</InputField>
+								<CheckBoxField name="ФайлыТолькоЧтение" id="167">
+									<DataPath>Объект.Файлы.ТолькоЧтение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ФайлыТолькоЧтениеКонтекстноеМеню" id="168"/>
+									<ExtendedTooltip name="ФайлыТолькоЧтениеРасширеннаяПодсказка" id="169"/>
+								</CheckBoxField>
+								<CheckBoxField name="ФайлыНевидимый" id="170">
+									<DataPath>Объект.Файлы.Невидимый</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ФайлыНевидимыйКонтекстноеМеню" id="171"/>
+									<ExtendedTooltip name="ФайлыНевидимыйРасширеннаяПодсказка" id="172"/>
+								</CheckBoxField>
+								<InputField name="ФайлыИмяБезРасширения" id="20">
+									<DataPath>Объект.Файлы.ИмяБезРасширения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФайлыИмяБезРасширенияКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ФайлыИмяБезРасширенияРасширеннаяПодсказка" id="22"/>
+								</InputField>
+								<InputField name="ФайлыПолноеИмя" id="23">
+									<DataPath>Объект.Файлы.ПолноеИмя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФайлыПолноеИмяКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ФайлыПолноеИмяРасширеннаяПодсказка" id="25"/>
+								</InputField>
+								<InputField name="ФайлыПуть" id="26">
+									<DataPath>Объект.Файлы.Путь</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФайлыПутьКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ФайлыПутьРасширеннаяПодсказка" id="28"/>
+								</InputField>
+								<InputField name="ФайлыРасширение" id="29">
+									<DataPath>Объект.Файлы.Расширение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФайлыРасширениеКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ФайлыРасширениеРасширеннаяПодсказка" id="31"/>
+								</InputField>
+								<CheckBoxField name="ФайлыСуществует" id="35">
+									<DataPath>Объект.Файлы.Существует</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ФайлыСуществуетКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ФайлыСуществуетРасширеннаяПодсказка" id="37"/>
+								</CheckBoxField>
+								<CheckBoxField name="ФайлыЭтоКаталог" id="38">
+									<DataPath>Объект.Файлы.ЭтоКаталог</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ФайлыЭтоКаталогКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ФайлыЭтоКаталогРасширеннаяПодсказка" id="40"/>
+								</CheckBoxField>
+								<CheckBoxField name="ФайлыЭтоФайл" id="41">
+									<DataPath>Объект.Файлы.ЭтоФайл</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ФайлыЭтоФайлКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ФайлыЭтоФайлРасширеннаяПодсказка" id="43"/>
+								</CheckBoxField>
+								<InputField name="ФайлыУниверсальноеВремяИзменения" id="47">
+									<DataPath>Объект.Файлы.УниверсальноеВремяИзменения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФайлыУниверсальноеВремяИзмененияКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="ФайлыУниверсальноеВремяИзмененияРасширеннаяПодсказка" id="49"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа4" id="119">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Колонки</v8:content>
+						</v8:item>
+					</Title>
+					<Width>15</Width>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="120"/>
+					<ChildItems>
+						<Table name="Свойства" id="121">
+							<Representation>List</Representation>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<DataPath>Объект.Свойства</DataPath>
+							<RowPictureDataPath>Объект.Свойства.Picture</RowPictureDataPath>
+							<ContextMenu name="СвойстваКонтекстноеМеню" id="122"/>
+							<AutoCommandBar name="СвойстваКоманднаяПанель" id="123">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СвойстваУстановитьФлажки" id="159">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Свойства.StandardCommand.CheckAll</CommandName>
+										<ExtendedTooltip name="СвойстваУстановитьФлажкиРасширеннаяПодсказка" id="160"/>
+									</Button>
+									<Button name="СвойстваСнятьФлажки" id="161">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Свойства.StandardCommand.UncheckAll</CommandName>
+										<ExtendedTooltip name="СвойстваСнятьФлажкиРасширеннаяПодсказка" id="162"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СвойстваРасширеннаяПодсказка" id="124"/>
+							<SearchStringAddition name="СвойстваСтрокаПоиска" id="125">
+								<AdditionSource>
+									<Item>Свойства</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СвойстваСтрокаПоискаКонтекстноеМеню" id="126"/>
+								<ExtendedTooltip name="СвойстваСтрокаПоискаРасширеннаяПодсказка" id="127"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СвойстваСостояниеПросмотра" id="128">
+								<AdditionSource>
+									<Item>Свойства</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СвойстваСостояниеПросмотраКонтекстноеМеню" id="129"/>
+								<ExtendedTooltip name="СвойстваСостояниеПросмотраРасширеннаяПодсказка" id="130"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СвойстваУправлениеПоиском" id="131">
+								<AdditionSource>
+									<Item>Свойства</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СвойстваУправлениеПоискомКонтекстноеМеню" id="132"/>
+								<ExtendedTooltip name="СвойстваУправлениеПоискомРасширеннаяПодсказка" id="133"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="СвойстваПометка" id="137">
+									<DataPath>Объект.Свойства.Check</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СвойстваПометкаКонтекстноеМеню" id="138"/>
+									<ExtendedTooltip name="СвойстваПометкаРасширеннаяПодсказка" id="139"/>
+								</CheckBoxField>
+								<InputField name="СвойстваЗначение" id="134">
+									<DataPath>Объект.Свойства.Value</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СвойстваЗначениеКонтекстноеМеню" id="135"/>
+									<ExtendedTooltip name="СвойстваЗначениеРасширеннаяПодсказка" id="136"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<Table name="Методы" id="140">
+							<Representation>List</Representation>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<DataPath>Объект.Методы</DataPath>
+							<RowPictureDataPath>Объект.Методы.Picture</RowPictureDataPath>
+							<ContextMenu name="МетодыКонтекстноеМеню" id="141"/>
+							<AutoCommandBar name="МетодыКоманднаяПанель" id="142">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="МетодыУстановитьФлажки" id="163">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Методы.StandardCommand.CheckAll</CommandName>
+										<ExtendedTooltip name="МетодыУстановитьФлажкиРасширеннаяПодсказка" id="164"/>
+									</Button>
+									<Button name="МетодыСнятьФлажки" id="165">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Методы.StandardCommand.UncheckAll</CommandName>
+										<ExtendedTooltip name="МетодыСнятьФлажкиРасширеннаяПодсказка" id="166"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="МетодыРасширеннаяПодсказка" id="143"/>
+							<SearchStringAddition name="МетодыСтрокаПоиска" id="144">
+								<AdditionSource>
+									<Item>Методы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="МетодыСтрокаПоискаКонтекстноеМеню" id="145"/>
+								<ExtendedTooltip name="МетодыСтрокаПоискаРасширеннаяПодсказка" id="146"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="МетодыСостояниеПросмотра" id="147">
+								<AdditionSource>
+									<Item>Методы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="МетодыСостояниеПросмотраКонтекстноеМеню" id="148"/>
+								<ExtendedTooltip name="МетодыСостояниеПросмотраРасширеннаяПодсказка" id="149"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="МетодыУправлениеПоиском" id="150">
+								<AdditionSource>
+									<Item>Методы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="МетодыУправлениеПоискомКонтекстноеМеню" id="151"/>
+								<ExtendedTooltip name="МетодыУправлениеПоискомРасширеннаяПодсказка" id="152"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="МетодыПометка" id="156">
+									<DataPath>Объект.Методы.Check</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="МетодыПометкаКонтекстноеМеню" id="157"/>
+									<ExtendedTooltip name="МетодыПометкаРасширеннаяПодсказка" id="158"/>
+								</CheckBoxField>
+								<InputField name="МетодыЗначение" id="153">
+									<DataPath>Объект.Методы.Value</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="МетодыЗначениеКонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="МетодыЗначениеРасширеннаяПодсказка" id="155"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="ФайлыКоличествоСтрок" id="50">
+			<DataPath>1/0:39408db1-71ad-4436-9c92-61894e6ca342/100000000</DataPath>
+			<Visible>false</Visible>
+			<ContextMenu name="ФайлыКоличествоСтрокКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ФайлыКоличествоСтрокРасширеннаяПодсказка" id="52"/>
+		</LabelField>
+		<LabelField name="ФайлыИтогРазмер" id="53">
+			<DataPath>Объект.Файлы.Размер</DataPath>
+			<Visible>false</Visible>
+			<ContextMenu name="ФайлыИтогРазмерКонтекстноеМеню" id="54"/>
+			<ExtendedTooltip name="ФайлыИтогРазмерРасширеннаяПодсказка" id="55"/>
+		</LabelField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalReportObject.МоиДействияПроводник</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.Каталоги">
+					<Column name="Имя" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Имя</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ИмяБезРасширения" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Имя без расширения</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ПолноеИмя" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Полное имя</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Путь" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Путь</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Расширение" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Расширение</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Размер" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Размер</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>10</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="Существует" id="7">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Существует</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ЭтоКаталог" id="8">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Это каталог</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ЭтоФайл" id="9">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Это файл</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ВремяИзменения" id="10">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Время изменения</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>DateTime</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+					<Column name="УниверсальноеВремяИзменения" id="11">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Универсальное время изменения</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>DateTime</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+					<Column name="ТолькоЧтение" id="12">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Только чтение</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="Невидимый" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Невидимый</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КоличествоФайлов" id="14">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество файлов</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ОтносительноеИмя" id="15">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Относительное имя</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Файлы</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Файлы.ЭтоКаталог</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Файлы.ЭтоФайл</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Каталоги</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Каталоги.ЭтоКаталог</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Каталоги.ЭтоФайл</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="НайтиФайлы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти файлы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти файлы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НайтиФайлыКоманда</Action>
+		</Command>
+		<Command name="Итоги" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Итоги</Action>
+		</Command>
+		<Command name="СохранитьПортрет" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить портрет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить портрет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьПортрет</Action>
+		</Command>
+		<Command name="ПрочитатьПортрет" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать портрет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать портрет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.LoadReportSettings</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПрочитатьПортрет</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>
